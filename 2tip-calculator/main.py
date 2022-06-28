@@ -1,0 +1,7 @@
+print("Calculate your bill")
+totalbill = input("How much is the total bill\n")
+people = input("How many people are dividing the bill\n")
+tip = input("What percentage you wanna tip\n")
+bill= (float(totalbill)+(float(totalbill)*(float(tip)/100)))/float(people)
+billeach=round(bill,2)
+print(f"each has to pay {billeach}")
