@@ -19,9 +19,9 @@
 
 ##################### Hints #####################
 import random
-cards= [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-player=[]
-house=[]
+import art
+
+
 def draw(user, amount):
     amount=int(amount)
     while amount != 0:
@@ -33,33 +33,46 @@ def draw(user, amount):
         print(f"cards drawn by computer are {house}")
     else:
         print(f"cards drawn by you are {player}")
-    
-draw(house, 2)
-draw(player, 2)
-continue_game=input('Input "y" to get another hit, input any other key to stop').lower()
-if continue_game=="y":
-    while continue_game=="y":
-        draw(player, 1)
-        continue_game=input('Input "y" to get another hit, input any other key to stop').lower()
-    
-totalcomp=0
-totalplayer=0
-for comp in house:
-    totalcomp=+comp
 
-for playr in player:
-    totalplayer=+playr
+new_game="y"
 
-if totalcomp<totalplayer:
-    draw(house, 1)
-if totalplayer>21:
-    print ('over 21 you lost')
-if totalcomp>totalplayer:
-    print(f"player has {totalplayer}. Computer has {totalcomp}. You lost")
-elif totalplayer>totalcomp:
-    print(f"player has {totalplayer}. Computer has {totalcomp}. You WIN")
+while new_game=="y":
 
+    print(f"{art.logo}\n Welcome to Blackjack")    
+    cards= [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    player=[]
+    house=[]
+    draw(house, 2)
+    draw(player, 2)
+    continue_game=input('Input "y" to get another hit, input any other key to stop').lower()
+    if continue_game=="y":
+        while continue_game=="y":
+            draw(player, 1)
+            continue_game=input('Input "y" to get another hit, input any other key to stop').lower()
+        
+    totalcomp=0
+    totalplayer=0
+    for comp in house:
+        totalcomp+=comp
 
+    for playr in player:
+        totalplayer+=playr
+
+    if totalcomp<totalplayer:
+        draw(house, 1)
+    if totalplayer>21:
+        print ('over 21 you lost')
+    elif totalcomp>totalplayer:
+        print(f"player has {totalplayer}. Computer has {totalcomp}. You lost")
+    elif totalplayer>totalcomp:
+        print(f"player has {totalplayer}. Computer has {totalcomp}. You WIN")
+
+    new_game=input('play new game? input "y" for yes or anything else to end')
+    if new_game=="y":
+        print('new hand started')
+    else:
+        print('goodbye')
+        
 
       
 #Hint 1: Go to this website and try out the Blackjack game: 
