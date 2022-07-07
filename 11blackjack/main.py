@@ -62,7 +62,7 @@ while new_game=="y":
     if countcomp()>21:
         print(f"computer overdrew to {countcomp()}. You win")
     
-    if countcomp()<countplayer() and totalplayer<21:
+    if countcomp()<countplayer() and countplayer()<21:
         draw(house, 1)
     if countcomp()>21:
         print(f"computer overdrew to {countcomp()}. You win")
