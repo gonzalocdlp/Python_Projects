@@ -46,25 +46,30 @@ totalcoffee=resources['coffee']
 totalmilk=resources['milk']
 continue_game="y"
 while continue_game=="y":
-    choice=input(f"What would you like? {drink_list}:").lower()
-    cost, watercost, milkcost, coffeecost =choose(choice)
-    quarters=int(input('how many quarters'))*0.25
-    dimes=int(input('how many dimes'))*0.10
-    knickels=int(input('how many knickels'))*0.05
-    moneyput= quarters+dimes+knickels
-    if cost<=moneyput:
-        if milkcost>totalmilk:
-            print('Machine needs more milk')
-        elif coffeecost>totalcoffee:
-            print('Machine needs more coffee')
-            
-        elif milkcost>totalmilk:
-            print('Machine needs more milk')
-        else:
-            change=moneyput-cost
-            print(f'your change is {change} here is your {choice}')
-            totalmilk+=-milkcost
-            totalmilk+=-coffeecost
-            totalwater+=-watercost
+    choice=input(f"What would you like? {drink_list} or 'report' to check levels:").lower()
+    if choice=='report':
+        print(f'Water levels are {totalwater}\nCoffee levels are {totalcoffee}\nMilk levels are {totalmilk}')
+    elif choice=='off':
+        continue_game='n'
     else:
-        print('not enough money')
+        cost, watercost, milkcost, coffeecost =choose(choice)
+        quarters=int(input('how many quarters'))*0.25
+        dimes=int(input('how many dimes'))*0.10
+        knickels=int(input('how many knickels'))*0.05
+        moneyput= quarters+dimes+knickels
+        if cost<=moneyput:
+            if watercost>totalwater:
+                print('Machine needs more water. Money refunded.')
+            elif coffeecost>totalcoffee:
+                print('Machine needs more coffee. Money refunded.')
+                
+            elif milkcost>totalmilk:
+                print('Machine needs more milk. Money refunded.')
+            else:
+                change=moneyput-cost
+                print(f'your change is {change} here is your {choice}')
+                totalmilk+=-milkcost
+                totalmilk+=-coffeecost
+                totalwater+=-watercost
+        else:
+            print('Not enough money. Money refunded')
