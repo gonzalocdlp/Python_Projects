@@ -28,9 +28,9 @@ while new_game=='y':
         celeb2_country=game.data[rand_celeb]['country']
 
     print(art.logo)
-    print(f'Compare A {celeb1} a {celeb1_description} from {celeb1_country}')
+    print(f'Compare A: {celeb1} a {celeb1_description} from {celeb1_country}')
     print(art.vs)
-    print(f'Compare B {celeb2} a {celeb2_description} from {celeb2_country}')
+    print(f'Compare B: {celeb2} a {celeb2_description} from {celeb2_country}')
     answer=input("Who has more followers? Type 'A' or 'B':").lower()
     #determine winner
     if celeb1_follower>celeb2_follower:
