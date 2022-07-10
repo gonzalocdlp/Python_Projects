@@ -15,12 +15,12 @@ screen= Screen()
 tim.color('blue')
 tim.pensize(1)
 tim.speed(100900)
-for move in range(1,360):
+for move in range(1,120):
     pickcolors=randomc()
     tim.color(pickcolors)
     tim.right(3)
-    tim.forward(1)
-    tim.circle(200)
+
+    tim.circle(100)
         
         
 
