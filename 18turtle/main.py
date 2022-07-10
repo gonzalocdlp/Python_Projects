@@ -3,11 +3,23 @@ tim=Turtle()
 screen= Screen()
 tim.shape('turtle')
 tim.color('blue')
-for i in range(1,20):
-    tim.penup()
-    tim.forward(10)
-    tim.pendown()
-    tim.forward(10)
+number=4
+color=40
+is_on="y"
+screen.colormode(255)
+tim.pencolor((240, 40, 40))
+while is_on=='y':
+    for i in range(0,number):
+        tim.pencolor((color, color, 0))
+        tim.right(360/number)
+        tim.forward(100)
+    if number<30:
+        number+=1
+        color=number*12
+    else:
+        is_on="n"
+        
+
 
 
 
