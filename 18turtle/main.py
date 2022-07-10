@@ -10,7 +10,7 @@ screen.colormode(255)
 tim.pencolor((240, 40, 40))
 while is_on=='y':
     for i in range(0,number):
-        tim.pencolor((color, color, 0))
+        tim.color((color, color, 0))
         tim.right(360/number)
         tim.forward(100)
     if number<30:
