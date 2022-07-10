@@ -9,14 +9,16 @@ def randomt():
     pickturn=sides[random.randint(0,1)]
     return pickturn
 def randomc():
-    colors= ["blue","red","cyan", "purple", "green", "yellow", "orange"]
-    lengthcolors=len(colors)-1
-    pickcolors=colors[random.randint(0,lengthcolors)]
+    screen.colormode(255)
+    color1=random.randint(0,255)
+    color2=random.randint(0,255)
+    color3=random.randint(0,255)
+    tim.color((color1, color2, color3))
+    pickcolors=[color1, color2, color3]
     return pickcolors
 tim=Turtle()
 screen= Screen()
 tim.color('blue')
-number=4
 tim.pensize(15)
 tim.speed(9)
 for i in range(1,1000):
