@@ -19,10 +19,14 @@ def turn_down():
 def turn_up():
     tim.setheading(90)
     tim.forward(10)
+def clear():
+    tim.home()
+    tim.clear()
 screen.listen()
 screen.onkey(key="space", fun=move_forward)
 screen.onkey(key="d", fun=turn_right)
 screen.onkey(key="s", fun=turn_down)
 screen.onkey(key="a", fun=turn_left)
 screen.onkey(key="w", fun=turn_up)
+screen.onkey(key="z", fun=clear)
 screen.exitonclick()
