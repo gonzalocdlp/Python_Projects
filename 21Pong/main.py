@@ -9,9 +9,10 @@ screen.bgcolor("black")
 screen.title("Pong")
 paddle=Paddle((350,0))
 paddle2=Paddle((-350,0))
-ball=Ball()
+ball=Ball(1)
 screen.tracer(0)
-score=Scoreboard()
+scoreL=Scoreboard((-200,250))
+scoreR=Scoreboard((200,250))
 
 
 
@@ -22,19 +23,21 @@ screen.onkey(paddle2.goUp,"w")
 screen.onkey(paddle2.goDown,"s")
 gameLive=True
 while gameLive:
+    time.sleep(ball.movespeed)
     screen.update()
-    time.sleep(0.1)
     ball.moveBall()
-    if ball.ycor()==300 or ball.ycor()==-300:
+    if ball.ycor()>=280 or ball.ycor()<=-280:
         ball.bounce()
-    if ball.distance(paddle) <10:
+    if ball.distance(paddle) <60 and ball.xcor()>=340:
         ball.hit()
-    if ball.distance(paddle2) <10:
+    if ball.distance(paddle2) <60 and ball.xcor()<=-340:
         ball.hit()
-    if ball.xcor()==350:
-        score.gameOver1()
-    if ball.xcor()==-350:
-        score.gameOver2()
+    if ball.xcor()>=420:
+        scoreL.scorePoint()
+        ball=Ball(-1)
+    if ball.xcor()<=-420:
+        scoreR.scorePoint()
+        ball=Ball(1)
 
 
 screen.exitonclick()
