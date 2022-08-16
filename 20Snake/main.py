@@ -11,6 +11,7 @@ screen.title("Snake")
 screen.tracer(0)
 snake= Snake()
 food = Food()
+food2 = Food()
 scoreboard=Scoreboard()
 gamePlaying= True
 while gamePlaying:
@@ -19,6 +20,10 @@ while gamePlaying:
     snake.move()
     if snake.head.distance(food) < 15:
         food.refresh()
+        scoreboard.scorePoint()
+        snake.extend()
+    if snake.head.distance(food2) < 15:
+        food2.refresh()
         scoreboard.scorePoint()
         snake.extend()
     if snake.head.xcor()> 350 or snake.head.xcor()< -350 or snake.head.ycor()>350 or snake.head.ycor()< -350:
