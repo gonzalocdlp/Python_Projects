@@ -1,7 +1,8 @@
 import os
 import openai
+import authapi
 openai.organization = "org-SnuqljBeSr8VdBfdkdiUOGb8"
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = authapi.apikey
 openai.Model.list()
 from newspaper import Article
 from textblob import TextBlob
@@ -12,7 +13,7 @@ article.download()
 article.parse()
 article.nlp()
 text=article.summary
-print(text)
 blob=TextBlob(text)
 sentiment=blob.sentiment.polarity
-print (sentiment)
+completion = openai.Completion.create(engine="ada", prompt="write about a dragon")
+print(completion)
