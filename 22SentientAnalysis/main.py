@@ -15,6 +15,8 @@ article.nlp()
 text=article.summary
 blob=TextBlob(text)
 sentiment=blob.sentiment.polarity
-completion = openai.Completion.create(engine="ada", prompt="write about a dragon")
 business="photography business in florida"
 keywords="Miami, portrait shoots, wedding shoots."
+completion = openai.Completion.create(engine="text-curie-001", prompt=f"write a 40 word description with a call to action about a {business} . Write it using the keywords {keywords}")
+print(completion['choices'][0]['text'])
+
