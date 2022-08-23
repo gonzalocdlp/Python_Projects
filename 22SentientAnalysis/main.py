@@ -16,4 +16,5 @@ text=article.summary
 blob=TextBlob(text)
 sentiment=blob.sentiment.polarity
 completion = openai.Completion.create(engine="ada", prompt="write about a dragon")
-print(completion)
+business="photography business in florida"
+keywords="Miami, portrait shoots, wedding shoots."
