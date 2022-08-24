@@ -9,11 +9,7 @@ header{
 ul{
     display: flex;
     justify-content: flex-start;
-    justify-items: center;
-    
-}
-li{
-    
+    justify-items: center;   
 }
 a{
     color:white;
@@ -100,6 +96,4 @@ button{
 }
 .row{
     flex: 1 1 160px;
-    
-
 }
