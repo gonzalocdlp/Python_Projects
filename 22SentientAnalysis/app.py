@@ -4,7 +4,7 @@ import authapi
 from flask import Flask, render_template, request, flash
 app = Flask(__name__)
 app.secret_key = "RoamingGiraffe12"
-
+app = Flask(__name__, static_url_path='/static')
 @app.route("/business")
 def index():
     flash("Create a one page information website with AI")
