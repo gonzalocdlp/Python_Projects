@@ -7,11 +7,22 @@
     <title>Business Website Generator</title>
 </head>
 <body>
-    <h1>Business website text generator</h1>
-    <form action="greet" method="post"></form>
-    <input type="text" name=""name_input>
-    <br>
-    <input type="submit" value="GREET" id ="greet">
+    <h1>Generatebiz.io</h1>
+    <form action="generate" method="post">
+        {% for message in get_flashed_messages() %}
+             <p>{{ message }}</p>
+         {% endfor %}
+        <br>
+        <p>Business name</p>
+        <input type="text" name="bizName">
+        <p>Type of business</p>
+        <input type="text" name="bizType">
+        <p>Full name of owner</p>
+        <input type="text" name="ownerName">
+        <p>Keywords for text</p>
+        <input type="text" name="keywords" placeholder="write words seperated by comma">
+        <br>
+        <input type="submit" value="Generate" id="generate">
 </form>
     
 </body>
