@@ -126,19 +126,19 @@ button{
 }
 .column{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    
     
 }
 .row{
     margin:0px, 0px, 0px, 0px;
     padding: 0px, 0px, 0px, 0px;
-    display: flex;
+    justify-content: center;
     flex-direction: column;
     flex-basis:100%;
-    justify-content: center;
+    display: flex;
     align-items: center;
-    flex: 1 1 160px;
+    
     flex-wrap: wrap;
 }
 
@@ -266,4 +266,28 @@ button{
   }
   img{
     min-width:70%;
+    margin-bottom: 2px;
   }
+  .normalText{
+    color: #636369;
+    line-height: 1.7em;
+  }
+  figure{
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  @media (max-width: 1000px) {
+
+    .column{
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .row{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
