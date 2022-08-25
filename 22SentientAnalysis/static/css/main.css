@@ -257,9 +257,13 @@ button{
     font-size: 1.2em;
   }
   .about{
-    padding:50px;
+    padding-top:90px;
+    padding-bottom:90px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  img{
+    min-width:70%;
   }
