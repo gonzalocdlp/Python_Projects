@@ -18,7 +18,7 @@ def generate():
     keywords=request.form['keywords']
     businessType=request.form['bizType']
     fullName=request.form['ownerName']
-    completion = openai.Completion.create(engine="text-curie-001", prompt=f"write a long description with a call to action about a {businessType}. Write it using the keywords {keywords}. the name of the business is {businessName} and it's owned by Gonzalo Casas", max_tokens=200)
+    completion = openai.Completion.create(engine="text-curie-001", prompt=f"write a long description with a call to action about a {businessType}. Write it using the keywords {keywords}. the name of the business is {businessName} and it's owned by {fullName}", max_tokens=2)
     flash(completion['choices'][0]['text'])
     return render_template("index.html")
 
