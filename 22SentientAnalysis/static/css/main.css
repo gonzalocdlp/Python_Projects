@@ -1,10 +1,18 @@
 header{
-    background-color: #7f6bf5;
+    background-color: white;
     height:60px;
     display: flex;
     justify-content: flex-start;
     justify-items: center;
+    min-width: 100%;
     
+    
+}
+li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
 }
 ul{
     display: flex;
@@ -12,8 +20,12 @@ ul{
     justify-items: center;   
 }
 a{
-    color:white;
+    color:black;
     font-family: "Helvetica Neue LT W05_65 Medium", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+a:hover{
+    font-size: 110%;
 }
 body {
     text-align: center;
@@ -23,7 +35,7 @@ body {
     color:#464853;
     font-size: 18px;
 }
-h1{
+h1, .bigText{
     font-variation-settings: 'wght' 3000;
     font-weight:900;
     color: black;
@@ -31,6 +43,7 @@ h1{
     letter-spacing: -0.045em;
     word-spacing: -2px;
     font-size: 50px;
+    margin:0;
 }
 form{
     justify-content: center;
@@ -38,11 +51,16 @@ form{
     font-size: 0.6em;
 }
 .form{
-    background-color: #7f6bf5;
     display: flex;
-    
+    justify-content: center;
     flex-wrap: wrap;
 
+}
+h3{
+    color:white;
+    font-size: 4.2em;
+    margin:0;
+    padding-top: 0.5em;
 }
 p {
     color: black;
@@ -55,7 +73,7 @@ img {
     width: 250px;
 }
 input {
-  width: 300px;
+  width: 400px;
   margin: 20px 20px;
   height: 50px;
   border: none;
@@ -69,20 +87,38 @@ input:focus  {
     border: solid 5px #00FFCE;
 }
 button{
-    font-family : inherit;
     font-family: "Helvetica Neue LT W05_65 Medium", Helvetica, Arial, sans-serif;
-    
+    font-size: 0.9em;
+    font-weight: 900;
 }
-#generate, .buttonMain{
-    background-color: #7f6bf5;
+#generate, .buttonMain, button{
+    background-color: black;
     border:  none;
-    width:  200px;
-    height:70px;
+    width:  230px;
+    height:55px;
     color: white;
     border-radius: 10px;
     font-family: "Helvetica Neue LT W05_65 Medium", Helvetica, Arial, sans-serif;
+    cursor: pointer;
     
 
+}
+#rainbow {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 #generate:hover, button:hover {
@@ -95,5 +131,135 @@ button{
     
 }
 .row{
+    margin:0px, 0px, 0px, 0px;
+    padding: 0px, 0px, 0px, 0px;
+    display: flex;
+    flex-direction: column;
+    flex-basis:100%;
+    justify-content: center;
+    align-items: center;
     flex: 1 1 160px;
+    flex-wrap: wrap;
 }
+
+
+
+
+
+
+:root {
+    --bg-color:white;
+     /* rgb(240, 240, 239); */
+    --typewriterSpeed: 3s;
+    --typewriterCharacters: 24;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    min-height: 100vh;
+    place-content: center;
+    text-align: center;
+    background: var(--bg-color);
+  }
+  
+  h2 {
+    display:flex;
+    font-variation-settings: 'wght' 900;
+    font-weight:900;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.4rem;
+    position: relative;
+    font-family: "Source Code Pro", monospace;
+    position: relative;
+    width: max-content;
+    padding-bottom:0px;
+    
+    margin:0;
+    margin-top:1.2em;
+    
+  }
+  .buttonSecondary{
+    color: black;
+    background: none;
+    background: white;
+    box-shadow: inset #d8d8da 0 0 0 1px;
+
+  }
+  
+  h2::before,
+  h2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  h2::before {
+    background: var(--bg-color);
+    animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards ;
+    
+    
+      
+     
+  }
+  
+  h2::after {
+    width: 0.125em;
+    background: black;
+    animation: typewriter var(--typewriterSpeed)
+        steps(var(--typewriterCharacters)) 1s forwards ,
+        blink 750ms steps(var(--typewriterCharacters)) infinite;
+    
+    
+    
+  }
+  
+  .subtitle {
+    color: hsl(0 0% 0% / 0.7);
+    font-size: 2rem;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 6s ease calc(var(--typewriterSpeed) + 4s) forwards;
+  }
+  
+  @keyframes typewriter {
+    to {
+      left: 100%;
+      
+    }
+  }
+  
+  @keyframes blink {
+    to {
+      background: transparent;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  footer{
+    background-color: black;
+    
+  }
+  .white{
+    color:white;
+    font-size: 1.2em;
+  }
+  .about{
+    padding:50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
